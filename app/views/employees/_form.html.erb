@@ -1,0 +1,22 @@
+<%= form_for(@employee) do |f| %>
+	<ul>
+	<% @employee.errors.full_messages.each do |error| %>
+		<li><%= error %></li>
+	<% end %>
+	</ul>
+	<p>
+		<%= f.label :first %> <br/>
+		<%= f.text_field :first %>
+	</p>
+	<p>
+		<%= f.label :last %> <br/>
+		<%= f.text_field :last %>
+	</p>
+	<p>
+		<%= f.label :hrly_cost %>
+		<%= f.number_field :hrly_cost, :step => 'any' %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

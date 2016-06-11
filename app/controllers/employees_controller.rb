@@ -21,5 +21,10 @@ def create
 	redirect_to employee_path(@employee)
 end
 
+def edit
+	@employee = Employee.find(params[:id])
+end
+
+
 
 end
