@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611170432) do
+ActiveRecord::Schema.define(version: 20160612210110) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "first"
@@ -20,5 +20,16 @@ ActiveRecord::Schema.define(version: 20160611170432) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "timestamps", force: :cascade do |t|
+    t.datetime "clock"
+    t.boolean  "working"
+    t.text     "status"
+    t.integer  "employee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "timestamps", ["employee_id"], name: "index_timestamps_on_employee_id"
 
 end

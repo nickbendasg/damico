@@ -1,0 +1,4 @@
+<div>
+	<h5><%= timestamp.clock.strftime("Clocked in/out at %I:%M%p on %m/%d/%Y") %></h5>
+	<p><%= timestamp.working.to_s  + "  - " + timestamp.status.to_s %></p>
+</div>

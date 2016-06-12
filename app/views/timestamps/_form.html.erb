@@ -1,0 +1,14 @@
+<h3>CLOCK IN/OUT</h3>
+
+<%= form_for [ @employee, @timestamp ] do |f| %>
+	
+	
+	<p>
+		<%= f.label :working %>
+		<%= f.check_box :working %>
+	<p>
+	
+	<p>
+		<%= f.submit 'Clockinout' %>
+	</p>
+<% end %>

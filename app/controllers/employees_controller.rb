@@ -11,7 +11,16 @@ end
 
 def show
 	@employee = Employee.find(params[:id])
+	
+	@timestamp = Timestamp.new
+	@timestamp.employee_id = @employee.id
+end
 
+def update
+	@employee = Employee.find(params[:id])
+	@employee.update(employee_params)
+
+	redirect_to employee_path(@employee)
 end
 
 def create
