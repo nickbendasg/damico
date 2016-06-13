@@ -13,7 +13,7 @@ def create
 end
 
 def timestamp_params
-	params.require(:timestamp).permit(:working)
+	params.require(:timestamp).permit(:working, :clock, :status)
 end
 
 end
