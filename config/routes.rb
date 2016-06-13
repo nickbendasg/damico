@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 	root 'employees#index'
+	resources :employees
 	resources :employees do
 		resources :timestamps
 	end
