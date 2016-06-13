@@ -7,15 +7,19 @@
 
 
 	<div id = 'title'>
-	<h1><%= @employee.first %></h1>
+	<h1><%= @employee.first.to_s + " " + @employee.last.to_s %></h1>
 	</div>
 
 	<div id = 'body'>
-	<p><%= @employee.hrly_cost %></p>
+	<p><%= "$" + @employee.hrly_cost.to_s + "/Hour cost" %></p>
 	</div>
 
 	<div id = 'submit'>
 	<%= render partial: 'timestamps/form' %>
+	</div>
+
+	<div>
+	<p>Scroll down to see history</p>
 	</div>
 </div>
 

@@ -1,5 +1,16 @@
 <%= form_for [ @employee, @timestamp ] do |f| %>
+
+<% 
+emp = @employee
+text = 'TextSample'
+
+if emp.timestamps.last.working
+	text = 'Clock Out'
+else
+	text = 'Clock In'
+end
+%>
 	<p>
-		<%= f.submit 'Clockinout', :id => 'submitButton' %>
+		<%= f.submit text, :id => 'submitButton' %>
 	</p>
 <% end %>
