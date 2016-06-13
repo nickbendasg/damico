@@ -6,12 +6,18 @@
 </div>
 
 
-<h1><%= @employee.first %></h1>
-<p><%= @employee.hrly_cost %></p>
-<%= render partial: 'timestamps/form' %>
+	<div id = 'title'>
+	<h1><%= @employee.first %></h1>
+	</div>
 
+	<div id = 'body'>
+	<p><%= @employee.hrly_cost %></p>
+	</div>
+
+	<div id = 'submit'>
+	<%= render partial: 'timestamps/form' %>
+	</div>
 </div>
-
 
 
 <h3>HISTORY</h3>

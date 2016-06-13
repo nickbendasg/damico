@@ -13,7 +13,29 @@ html, body {
 #launch {
 	min-height: 100%;
 	background-color: #ffffe6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+#content {
+    background-color: white;
+}
+
+
+#title {
+
+}
+
+#body {
+
+}
+
+#submit {
+
+}
+
+
 
 #submitButton {
     background-color:#2fd62f;
@@ -38,6 +60,6 @@ html, body {
 }
 
 .links {
-
+	font-size: 2em;
 	color: white;
 }
