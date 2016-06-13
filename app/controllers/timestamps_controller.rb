@@ -1,4 +1,5 @@
 class TimestampsController < ApplicationController
+include TimestampsHelper
 
 def create
 	@timestamp = Timestamp.new(timestamp_params)
@@ -12,8 +13,5 @@ def create
 	redirect_to employee_path(@timestamp.employee)
 end
 
-def timestamp_params
-	params.require(:timestamp).permit(:working)
-end
 
 end
