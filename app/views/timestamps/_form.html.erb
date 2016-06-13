@@ -1,9 +1,5 @@
-<h3>CLOCK IN / OUT</h3>
-
 <%= form_for [ @employee, @timestamp ] do |f| %>
-	
-	
 	<p>
-		<%= f.submit 'Clockinout' %>
+		<%= f.submit 'Clockinout', :id => 'submitButton' %>
 	</p>
 <% end %>
