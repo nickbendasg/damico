@@ -1,7 +1,10 @@
 <div id="launch">
 
-<%= link_to "<< Back to All Employees", employees_path %>
-<%= link_to "Edit", edit_employee_path(@employee) %>
+<div id = 'linkbar'>
+<%= link_to "<< Back to All Employees", employees_path, :class => 'links' %>
+<%= link_to "Edit", edit_employee_path(@employee), :class => 'links' %>
+</div>
+
 
 <h1><%= @employee.first %></h1>
 <p><%= @employee.hrly_cost %></p>
