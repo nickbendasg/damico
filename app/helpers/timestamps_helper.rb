@@ -1,7 +1,7 @@
 module TimestampsHelper
 
 def timestamp_params
-	params.require(:timestamp).permit()
+	params.require(:timestamp)
 end
 
 end

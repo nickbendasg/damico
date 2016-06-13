@@ -25,4 +25,4 @@
 
 
 <h3>HISTORY</h3>
-<%= render partial: 'employees/timestamp', collection: @employee.timestamps.order(:clock).reverse %>
+<%= render partial: 'employees/timestamp', collection: @employee.timestamps.order(:start).reverse %>

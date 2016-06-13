@@ -2,15 +2,22 @@
 
 <% 
 emp = @employee
-text = 'TextSample'
-
-if emp.timestamps.last.working
-	text = 'Clock Out'
-else
-	text = 'Clock In'
-end
 %>
-	<p>
-		<%= f.submit text, :id => 'submitButton' %>
-	</p>
+
+
+<p><%=
+
+if emp.timestamps.last === nil
+	f.submit "Clock In", :id => 'submitButton'
+
+elsif emp.timestamps.last.working
+	f.submit "Clock Out", :id => 'submitButton'
+
+elsif !emp.timestamps.last.working
+	f.submit "Clock In", :id => 'submitButton'
+end
+
+%></p>
+
+
 <% end %>

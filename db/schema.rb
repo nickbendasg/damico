@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 20160612210110) do
   end
 
   create_table "timestamps", force: :cascade do |t|
-    t.datetime "clock"
+    t.datetime "start"
+    t.datetime "stop"
     t.boolean  "working"
     t.text     "status"
     t.integer  "employee_id"
