@@ -8,6 +8,12 @@ p {
 html, body {
 	height:100%;
 }
+
+h1 {
+	font-size: 5em;
+}
+
+
 #launch {
 	min-height: 100%;
 	background-color: #ffffe6;
@@ -60,4 +66,5 @@ html, body {
 .links {
 	font-size: 2em;
 	color: white;
+	padding-right: 50px;
 }
