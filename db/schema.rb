@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160612210110) do
     t.string   "first"
     t.string   "last"
     t.decimal  "hrly_cost"
+    t.decimal  "hrs_todate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

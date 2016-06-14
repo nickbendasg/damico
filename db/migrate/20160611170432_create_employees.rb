@@ -4,7 +4,8 @@ class CreateEmployees < ActiveRecord::Migration
 	t.string :first
 	t.string :last
 	t.decimal :hrly_cost
-	
+	t.decimal :hrs_todate
+		
 	t.timestamps
     end
   end

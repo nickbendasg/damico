@@ -25,6 +25,7 @@ end
 
 def create
 	@employee = Employee.new(employee_params)
+	@employee.hrs_todate = 0
 	@employee.save
 
 	redirect_to employee_path(@employee)

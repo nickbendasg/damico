@@ -5,12 +5,10 @@ def create
 
 if params[:commit] == "Clock In"
 
+	@timestampOLD = Employee.find(params[:employee_id]).timestamps.last
+	
 	@timestamp = Timestamp.new()
 	@timestamp.employee_id = params[:employee_id]
-
-	
-	
-	@timestampOLD = Employee.find(params[:employee_id]).timestamps.last
 	
 	if @timestampOLD === nil
 		@timestamp.status = 'Employees first time'
@@ -29,9 +27,14 @@ if params[:commit] == "Clock In"
 	@timestamp.save
 
 elsif params[:commit] == "Clock Out"
-	
-	@timestamp = Timestamp.last
+
+	@employee = Employee.find(params[:employee_id])	
+	@timestamp = @employee.timestamps.last
 	@timestamp.stop = Time.current
+
+	@employee.hrs_todate = @employee.hrs_todate +  ((Time.parse(@timestamp.stop.to_s) - Time.parse(@timestamp.start.to_s))/60)
+	@employee.save
+	
 	@timestamp.working = 'false'
 	@timestamp.save
 

@@ -1,9 +1,19 @@
 <div>
+
 <% if timestamp.stop === nil %>
+
 	<h5><%= timestamp.start.strftime("Clocked in at %I:%M%p on %m/%d/%Y") %></h5>
-	<p><%= timestamp.working.to_s  + "  - " + timestamp.status.to_s %></p>
+
 <% elsif %>
-	<h5><%= timestamp.start.strftime("Worked from %I:%M%p on %m/%d/%Y").to_s + timestamp.stop.strftime(" to %I:%M%p on %m/%d/%Y") %></h5>
-	<p><%= timestamp.working.to_s  + "  - " + timestamp.status.to_s %></p>
+
+	<h5><%= timestamp.start.strftime("%m/%d/%Y").to_s %></h5>
+
+	<% if timestamp.start.to_date === timestamp.stop.to_date %>
+		<h5><%= timestamp.start.strftime("Worked from %I:%M%p").to_s + timestamp.stop.strftime(" to %I:%M%p") %></h5>
+	<% else %>
+		<h5><%= timestamp.start.strftime("Worked from %I:%M%p").to_s + timestamp.stop.strftime(" to %I:%M%p on %m/%d/%Y") %></h5>
+	<% end %>
+
 <% end %>
+
 </div>

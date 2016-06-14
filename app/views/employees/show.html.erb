@@ -11,7 +11,23 @@
 	</div>
 
 	<div id = 'body'>
-	<p><%= "$" + @employee.hrly_cost.to_s + "/Hour cost" %></p>
+
+<% if @employee.hrs_todate === nil %>
+
+<p>You haven't yet worked this week</p>
+
+<% else %>
+
+
+
+	<p><%= ('%.2f' % @employee.hrs_todate).to_s + " Minutes Worked" %></p>
+	<p>
+		<% cost = (@employee.hrly_cost/60)*@employee.hrs_todate %>
+		<%= "$" + ('%.2f' % cost) %>
+	</p>
+
+<% end %>
+
 	</div>
 
 	<div id = 'submit'>
