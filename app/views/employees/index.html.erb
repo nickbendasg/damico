@@ -3,8 +3,8 @@
 <ul id="employees">
 	<% @employees.each do |employee| %>
 		<li>
-			<%= link_to "GoTo", employee_path(employee) %>
-			<%= employee.first + " " + employee.last %>
+			<%  name = employee.first + " " + employee.last %>
+			<%= link_to name, employee_path(employee) %>
 		</li>
 	<% end %>
 </ul>

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-	root 'employees#index'
+	root 'statics#index'
 	resources :employees
 	resources :employees do
 		resources :timestamps
 	end
-
+	resources :statics
 	resources :employees do
 		resources :timestamps do
 			collection do
