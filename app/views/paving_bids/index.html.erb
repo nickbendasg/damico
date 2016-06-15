@@ -1,0 +1,24 @@
+<h1>Paving Estimates</h1>
+
+<ul id="pavingbids">
+	<% @paving_bids.each do |paving_bid| %>
+		<li>
+			<%= link_to paving_bid.jobName, paving_bid_path(paving_bid), :class => 'mainBidLinks' %>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+		</li>
+	<% end %>
+</ul>
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<%= link_to "Start a New Estimate", new_paving_bid_path, class: "new_paving_bid" %>
+
+

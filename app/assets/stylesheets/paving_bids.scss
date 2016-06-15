@@ -1,0 +1,44 @@
+// Place all the styles related to the paving_bids controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.submitButton {
+
+
+	width: 100px;
+	height: 50px;	
+	text-size: 5em;
+	background-color: black;
+	color: white;
+}
+
+#paving_bid_jobID, #paving_bid_jobName {
+	
+	color: blue;
+	height: 75px;
+	width: 100%;
+
+}
+
+
+.mainBidLinks {
+
+font-size: 3.5em;
+
+}
+
+
+.new_paving_bid {
+
+font-size: 3em;
+}
+
+
+.editT, .editI {
+
+font-size: 2.2em;
+
+}

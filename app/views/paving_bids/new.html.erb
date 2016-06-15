@@ -1,0 +1,21 @@
+<h1>Create Your Estimate</h1>
+
+<%= form_for(@paving_bid) do |f| %>
+  <ul>
+  <% @paving_bid.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= f.label :jobName %><br />
+    <%= f.text_field :jobName %>
+  </p>
+  <p>
+    <%= f.label :jobID %><br />
+    <%= f.number_field :jobID %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+

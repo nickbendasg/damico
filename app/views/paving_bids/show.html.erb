@@ -1,0 +1,13 @@
+<div id = 'linkbar'>
+<%= link_to "<< Back to All Employees", paving_bids_path, :class => 'links' %>
+<%= link_to "Edit", edit_paving_bid_path(@paving_bid), :class => 'links' %>
+</div>
+
+<h1>
+<% title = @paving_bid.jobID.to_s + " - " + @paving_bid.jobName.to_s %>
+<%= title %>
+</h1>
+
+
+
+

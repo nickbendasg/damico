@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614184342) do
+ActiveRecord::Schema.define(version: 20160615141455) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "first"
@@ -22,7 +22,15 @@ ActiveRecord::Schema.define(version: 20160614184342) do
     t.datetime "updated_at"
   end
 
+  create_table "paving_bids", force: :cascade do |t|
+    t.integer  "jobID"
+    t.string   "jobName"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "statics", force: :cascade do |t|
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

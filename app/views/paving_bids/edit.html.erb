@@ -1,0 +1,35 @@
+<div id = 'linkbar'>
+<%= link_to "<< Cancel", paving_bids_path, :class => 'links' %>
+</div>
+
+<h1>
+<% title = "EDIT " +  @paving_bid.jobID.to_s + " - " + @paving_bid.jobName.to_s %>
+<%= title %>
+</h1>
+
+
+
+<%= form_for(@paving_bid) do |f| %>
+  <ul>
+  <% @paving_bid.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= f.label :jobName, :class => 'editT' %><br />
+    <%= f.text_field :jobName, :class => 'editI' %>
+  </p>
+  <p>
+    <%= f.label :jobID, :class => 'editT' %><br />
+    <%= f.number_field :jobID, :class => 'editI' %>
+  </p>
+	<p>
+	<%= f.submit 'SUBMIT', :class => 'submitButton' %>
+	</p>
+
+
+
+
+<% end %>
+
+
