@@ -3,11 +3,83 @@
 <%= link_to "Edit", edit_paving_bid_path(@paving_bid), :class => 'links' %>
 </div>
 
-<h1>
+<h2>
 <% title = @paving_bid.jobID.to_s + " - " + @paving_bid.jobName.to_s %>
 <%= title %>
-</h1>
+</h2>
+
+<h3>Information</h3>
+
+<p><%= "To: " + @paving_bid.contactName.to_s %>
+</p>
+<p><%= @paving_bid.contactPhone.to_s + " | " + @paving_bid.contactAddress.to_s %>
+</p>
+
+<%
+
+sy = (@paving_bid.squareFeet/9)
+
+garityCost = sy * @paving_bid.garitySYrate
+damicoCost = @paving_bid.damicoReclaimTime * @paving_bid.damicoReclaimCost
+grAcom = @paving_bid.gradeCompactSFrate * @paving_bid.squareFeet
+
+classTwoTons = (@paving_bid.inClassTwo/4)*(@paving_bid.squareFeet/39.15)
+classTwoTotal = classTwoTons * @paving_bid.classTwoCost
+classOneTons = (@paving_bid.inClassOne/4)*(@paving_bid.squareFeet/39.15)
+classOneTotal = classOneTons * @paving_bid.classTwoCost
+levelingTons = (@paving_bid.inLeveling/4)*(@paving_bid.squareFeet/39.15)
+levelingTotal = levelingTons * @paving_bid.levelingCost
+
+processTons = @paving_bid.inProcess*((@paving_bid.squareFeet/9)*0.0534)
+processTotal = processTons * @paving_bid.classOneCost
+
+baseTime = processTons /  @paving_bid.tonsBasePerDay
+baseCost = baseTime * @paving_bid.costBasePerDay
+paveTons = (classTwoTons + classOneTons + levelingTons)
+paveTime = paveTons / @paving_bid.tonsPavePerDay
+paveCost = paveTime * @paving_bid.costPavePerDay
+
+truckTotal = @paving_bid.numRentalTrucks * @paving_bid.rentalTruckCost * @paving_bid.truckDays
+
+%>
 
 
+<h3>Reclaim</h3>
 
+<p><%= "Garity: " + sy.to_s + " SY at $" + @paving_bid.garitySYrate.to_s + " per Square Yard. Total is $" + garityCost.to_s %>
+</p>
+<p><%= "Damico: " + @paving_bid.damicoReclaimTime.to_s + " Days at $" + @paving_bid.damicoReclaimCost.to_s + " per Day. Total is $" + damicoCost.to_s %>
+</p>
 
+<h3>Fine Grade & Compact</h3>
+
+<p><%= @paving_bid.squareFeet.to_s + " SF at $" + @paving_bid.gradeCompactSFrate.to_s + " per Square Foot. Total is $" + grAcom.to_s %>
+</p>
+
+<h3>Materials</h3>
+
+<p><%= @paving_bid.inClassTwo.to_s + " inches of Class II. " + classTwoTons.to_s + " tons at $" + @paving_bid.classTwoCost.to_s + ". Total is $" + classTwoTotal.to_s %>
+</p>
+<p><%= @paving_bid.inClassOne.to_s + " inches of Class I. " + classOneTons.to_s + " tons at $" + @paving_bid.classOneCost.to_s + ". Total is $" + classOneTotal.to_s %>
+</p>
+<p><%= @paving_bid.inProcess.to_s + " inches of Process. " + processTons.to_s + " tons at $" + @paving_bid.processCost.to_s + ". Total is $" + processTotal.to_s %>
+</p>
+<p><%= @paving_bid.inLeveling.to_s + " inches of Leveling Course. " + levelingTons.to_s + " tons at $" + @paving_bid.levelingCost.to_s + ". Total is $" + levelingTotal.to_s %>
+</p>
+
+<h3>Base Work</h3>
+
+<p><%= "Lay down " + @paving_bid.tonsBasePerDay.to_s + " Tons per day. " + processTons.to_s + " Tons over " + baseTime.to_s + " Days at a cost of " + @paving_bid.costBasePerDay.to_s + " per Day. Total is $" + baseCost.to_s %>
+</p>
+
+<h3>Paving</h3>
+
+<p><%= "Lay down " + @paving_bid.tonsPavePerDay.to_s + " Tons per day. " + paveTons.to_s + " Tons over " + paveTime.to_s + " Days at a cost of " + @paving_bid.costPavePerDay.to_s + " per Day. Total is $" + paveCost.to_s %>
+</p>
+
+<h3>Rental Trucks</h3>
+
+<p><%= "Renting " + @paving_bid.numRentalTrucks.to_s + " Trucks at $" + @paving_bid.rentalTruckCost.to_s + " per Day for " + @paving_bid.truckDays.to_s + " days. Total is $" + truckTotal.to_s %>
+</p>
+
+<h3>Breakdown</h3>
