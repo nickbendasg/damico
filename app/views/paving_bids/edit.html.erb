@@ -10,26 +10,167 @@
 
 
 <%= form_for(@paving_bid) do |f| %>
-  <ul>
-  <% @paving_bid.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-  <% end %>
-  </ul>
-  <p>
-    <%= f.label :jobName, :class => 'editT' %><br />
-    <%= f.text_field :jobName, :class => 'editI' %>
-  </p>
-  <p>
-    <%= f.label :jobID, :class => 'editT' %><br />
-    <%= f.number_field :jobID, :class => 'editI' %>
-  </p>
+ 	
+	<ul>
+ 	<% @paving_bid.errors.full_messages.each do |error| %>
+ 		<li><%= error %></li>
+ 	<% end %>
+ 	</ul>
+
+
+	<p>	<%= f.label :jobID, :class => 'editT' %><br />
+ 		<%= f.number_field :jobID, :class => 'editI' %>
+	</p>
+ 	
+	<p>	<%= f.label :jobName, :class => 'editT' %><br />
+		<%= f.text_field :jobName, :class => 'editI' %>
+	</p>
+
+	<p>	<%= f.label :jobAddress, :class => 'editT' %><br />
+ 		<%= f.text_field :jobAddress, :class => 'editI' %>
+	</p>
+ 	
+
+
+	<p>	<%= f.label :contactName, :class => 'editT' %><br />
+		<%= f.text_field :contactName, :class => 'editI' %>
+	</p>
+
+	<p>	<%= f.label :contactPhone, :class => 'editT' %><br />
+ 		<%= f.number_field :contactPhone, :class => 'editI' %>
+	</p>
+
+	<p>	<%= f.label :contactAddress, :class => 'editT' %><br />
+		<%= f.text_field :contactAddress, :class => 'editI' %>
+	</p>
+
+
+	<p>	<%= f.label :bidDate, :class => 'editT' %><br />
+		<%= f.date_field :bidDate, :class => 'editI' %>
+	</p>
+
+
+
+
+
+	<p>	<%= f.label :taxRate, :class => 'editT' %><br />
+ 		<%= f.number_field :taxRate, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :tax, :class => 'editT' %><br />
+		<%= f.check_box :tax, :class => 'editI', step: 'any' %>
+
+	</p>
+
+
+
+
+
+
+	<p>	<%= f.label :squareFeet, :class => 'editT' %><br />
+ 		<%= f.number_field :squareFeet, :class => 'editI' %>
+	</p>
+
+
+
+
+
+	<p>	<%= f.label :garitySYrate, :class => 'editT' %><br />
+ 		<%= f.number_field :garitySYrate, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :damicoReclaimTime, :class => 'editT' %><br />
+ 		<%= f.number_field :damicoReclaimTime, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :damicoReclaimCost, :class => 'editT' %><br />
+ 		<%= f.number_field :damicoReclaimCost, :class => 'editI', step: 'any' %>
+	</p>
+
+
+
+
+
+	<p>	<%= f.label :gradeCompactSFrate, :class => 'editT' %><br />
+ 		<%= f.number_field :gradeCompactSFrate, :class => 'editI', step: 'any' %>
+	</p>
+
+
+
+
+
+	<p>	<%= f.label :inClassTwo, :class => 'editT' %><br />
+ 		<%= f.number_field :inClassTwo, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :classTwoCost, :class => 'editT' %><br />
+ 		<%= f.number_field :classTwoCost, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :inClassOne, :class => 'editT' %><br />
+ 		<%= f.number_field :inClassOne, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :classOneCost, :class => 'editT' %><br />
+ 		<%= f.number_field :classOneCost, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :inLeveling, :class => 'editT' %><br />
+ 		<%= f.number_field :inLeveling, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :levelingCost, :class => 'editT' %><br />
+ 		<%= f.number_field :levelingCost, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :inProcess, :class => 'editT' %><br />
+ 		<%= f.number_field :inProcess, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :processCost, :class => 'editT' %><br />
+ 		<%= f.number_field :processCost, :class => 'editI', step: 'any' %>
+	</p>
+
+
+
+
+
+
+
+	<p>	<%= f.label :tonsBasePerDay, :class => 'editT' %><br />
+ 		<%= f.number_field :tonsBasePerDay, :class => 'editI' %>
+	</p>
+
+	<p>	<%= f.label :costBasePerDay, :class => 'editT' %><br />
+ 		<%= f.number_field :costBasePerDay, :class => 'editI' %>
+	</p>
+
+	<p>	<%= f.label :tonsPavePerDay, :class => 'editT' %><br />
+ 		<%= f.number_field :tonsPavePerDay, :class => 'editI' %>
+	</p>
+
+	<p>	<%= f.label :costPavePerDay, :class => 'editT' %><br />
+ 		<%= f.number_field :costPavePerDay, :class => 'editI' %>
+	</p>
+
+	<p>	<%= f.label :numRentalTrucks, :class => 'editT' %><br />
+ 		<%= f.number_field :numRentalTrucks, :class => 'editI' %>
+	</p>
+
+	<p>	<%= f.label :rentalTruckCost, :class => 'editT' %><br />
+ 		<%= f.number_field :rentalTruckCost, :class => 'editI', step: 'any' %>
+	</p>
+
+	<p>	<%= f.label :truckDays, :class => 'editT' %><br />
+ 		<%= f.number_field :truckDays, :class => 'editI', step: 'any' %>
+	</p>
+
+
 	<p>
 	<%= f.submit 'SUBMIT', :class => 'submitButton' %>
 	</p>
 
 
 
-
 <% end %>
-
 
