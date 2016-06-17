@@ -1,5 +1,9 @@
 <h1>Create Your Estimate</h1>
 
+<% longFactor = false %>
+
+
+
 <%= form_for(@paving_bid) do |f| %>
  	
 	<ul>
@@ -9,40 +13,39 @@
  	</ul>
 
 
-	<p>	<%= f.label :jobID, :class => 'editT' %><br />
+	<p>	<%= f.label :jobID, 'Job ID', :class => 'editT' %><br />
  		<%= f.number_field :jobID, :class => 'editI' %>
 	</p>
  	
-	<p>	<%= f.label :jobName, :class => 'editT' %><br />
+	<p>	<%= f.label :jobName, 'Job Name', :class => 'editT' %><br />
 		<%= f.text_field :jobName, :class => 'editI' %>
 	</p>
 
-	<p>	<%= f.label :jobAddress, :class => 'editT' %><br />
+	<p>	<%= f.label :jobAddress, 'Job Address', :class => 'editT' %><br />
  		<%= f.text_field :jobAddress, :class => 'editI' %>
 	</p>
  	
 
 
-	<p>	<%= f.label :contactName, :class => 'editT' %><br />
+	<p>	<%= f.label :contactName, 'Contact Name', :class => 'editT' %><br />
 		<%= f.text_field :contactName, :class => 'editI' %>
 	</p>
 
-	<p>	<%= f.label :contactPhone, :class => 'editT' %><br />
+	<p>	<%= f.label :contactPhone, 'Contact Phone Number', :class => 'editT' %><br />
  		<%= f.number_field :contactPhone, :class => 'editI' %>
 	</p>
 
-	<p>	<%= f.label :contactAddress, :class => 'editT' %><br />
+	<p>	<%= f.label :contactAddress, 'Contact Address', :class => 'editT' %><br />
 		<%= f.text_field :contactAddress, :class => 'editI' %>
 	</p>
 
 
-	<p>	<%= f.label :bidDate, :class => 'editT' %><br />
+	<p>	<%= f.label :bidDate, 'Bid Date', :class => 'editT' %><br />
 		<%= f.date_field :bidDate, :class => 'editI' %>
 	</p>
 
 
-
-
+<% if longFactor %>
 
 	<p>	<%= f.label :taxRate, :class => 'editT' %><br />
  		<%= f.number_field :taxRate, :class => 'editI', step: 'any' %>
@@ -52,18 +55,19 @@
  		<%= f.check_box :tax, :class => 'editI', step: 'any' %>
 	</p>
 
+<% end %>
 
 
 
 
 
-	<p>	<%= f.label :squareFeet, :class => 'editT' %><br />
+	<p>	<%= f.label :squareFeet, 'Square Feet', :class => 'editT' %><br />
  		<%= f.number_field :squareFeet, :class => 'editI' %>
 	</p>
 
 
 
-
+<% if longFactor %>
 
 	<p>	<%= f.label :garitySYrate, :class => 'editT' %><br />
  		<%= f.number_field :garitySYrate, :class => 'editI', step: 'any' %>
@@ -85,73 +89,94 @@
  		<%= f.number_field :gradeCompactSFrate, :class => 'editI', step: 'any' %>
 	</p>
 
+<% end %>
 
 
 
-
-	<p>	<%= f.label :inClassTwo, :class => 'editT' %><br />
+	<p>	<%= f.label :inClassTwo, 'Class II Depth (Inches)', :class => 'editT' %><br />
  		<%= f.number_field :inClassTwo, :class => 'editI', step: 'any' %>
 	</p>
+
+
+<% if longFactor %>
 
 	<p>	<%= f.label :classTwoCost, :class => 'editT' %><br />
  		<%= f.number_field :classTwoCost, :class => 'editI', step: 'any' %>
 	</p>
+<% end %>
 
-	<p>	<%= f.label :inClassOne, :class => 'editT' %><br />
+	<p>	<%= f.label :inClassOne, 'Class I Depth (Inches)', :class => 'editT' %><br />
  		<%= f.number_field :inClassOne, :class => 'editI', step: 'any' %>
 	</p>
+
+<% if longFactor %>
+
 
 	<p>	<%= f.label :classOneCost, :class => 'editT' %><br />
  		<%= f.number_field :classOneCost, :class => 'editI', step: 'any' %>
 	</p>
+<% end %>
 
-	<p>	<%= f.label :inLeveling, :class => 'editT' %><br />
+
+	<p>	<%= f.label :inLeveling, 'Leveling Course Depth (Inches)', :class => 'editT' %><br />
  		<%= f.number_field :inLeveling, :class => 'editI', step: 'any' %>
 	</p>
 
+<% if longFactor %>
 	<p>	<%= f.label :levelingCost, :class => 'editT' %><br />
  		<%= f.number_field :levelingCost, :class => 'editI', step: 'any' %>
 	</p>
+<% end %>
 
-	<p>	<%= f.label :inProcess, :class => 'editT' %><br />
+
+	<p>	<%= f.label :inProcess, 'Process Depth (Inches)', :class => 'editT' %><br />
  		<%= f.number_field :inProcess, :class => 'editI', step: 'any' %>
 	</p>
 
+<% if longFactor %>
 	<p>	<%= f.label :processCost, :class => 'editT' %><br />
  		<%= f.number_field :processCost, :class => 'editI', step: 'any' %>
 	</p>
+<% end %>
 
 
 
 
 
 
-
-	<p>	<%= f.label :tonsBasePerDay, :class => 'editT' %><br />
+	<p>	<%= f.label :tonsBasePerDay, 'Base: Tons Per Day', :class => 'editT' %><br />
  		<%= f.number_field :tonsBasePerDay, :class => 'editI' %>
 	</p>
 
+<% if longFactor %>
 	<p>	<%= f.label :costBasePerDay, :class => 'editT' %><br />
  		<%= f.number_field :costBasePerDay, :class => 'editI' %>
 	</p>
+<% end %>
 
-	<p>	<%= f.label :tonsPavePerDay, :class => 'editT' %><br />
+	<p>	<%= f.label :tonsPavePerDay, 'Pave: Tons Per Day', :class => 'editT' %><br />
  		<%= f.number_field :tonsPavePerDay, :class => 'editI' %>
 	</p>
 
+<% if longFactor %>
 	<p>	<%= f.label :costPavePerDay, :class => 'editT' %><br />
  		<%= f.number_field :costPavePerDay, :class => 'editI' %>
 	</p>
+<% end %>
 
-	<p>	<%= f.label :numRentalTrucks, :class => 'editT' %><br />
+
+	<p>	<%= f.label :numRentalTrucks, 'Quantity Rental Trucks', :class => 'editT' %><br />
  		<%= f.number_field :numRentalTrucks, :class => 'editI' %>
 	</p>
 
+<% if longFactor %>
 	<p>	<%= f.label :rentalTruckCost, :class => 'editT' %><br />
  		<%= f.number_field :rentalTruckCost, :class => 'editI', step: 'any' %>
 	</p>
+<% end %>
 
-	<p>	<%= f.label :truckDays, :class => 'editT' %><br />
+
+	<p>	<%= f.label :truckDays, 'Quantity Days Rented', :class => 'editT' %><br />
  		<%= f.number_field :truckDays, :class => 'editI', step: 'any' %>
 	</p>
 
