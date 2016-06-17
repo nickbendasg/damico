@@ -37,6 +37,9 @@ def create
 
         @paving_bid.gradeCompactSFrate = 0.20
         @paving_bid.damicoReclaimCost = 6000
+        @paving_bid.costBasePerDay = 6000
+        @paving_bid.costPavePerDay = 6000
+        @paving_bid.rentalTruckCost = 960
         @paving_bid.classTwoCost = 76
         @paving_bid.classOneCost = 70
         @paving_bid.processCost = 14
