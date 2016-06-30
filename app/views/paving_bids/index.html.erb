@@ -1,24 +1,43 @@
 <h1>Paving Estimates</h1>
 
-<ul id="pavingbids">
-	<% @paving_bids.each do |paving_bid| %>
-		<li>
-			<%= link_to paving_bid.jobName, paving_bid_path(paving_bid), :class => 'mainBidLinks' %>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-		</li>
-	<% end %>
-</ul>
-
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-
 <%= link_to "Start a New Estimate", new_paving_bid_path, class: "new_paving_bid" %>
+
+
+
+<br/>
+<br/>
+
+<br/>
+<br/>
+
+<table class="firstTable" id="pavingbids">
+		<tr>
+			<th><p>!</p></th>
+			<th><p>Job</p></th>
+			<th><p>Date</p></th>
+		</tr>
+	<% @paving_bids.each do |paving_bid| %>
+		<tr>
+
+			<td>
+			<% display = paving_bid.jobID.to_s + " - " + paving_bid.jobName.to_s + " | " + paving_bid.bidDate.to_formatted_s(:long) %>
+			<%= link_to "View", paving_bid_path(paving_bid), :class => 'mainBidLinks' %> <br/>
+			<%= link_to "Delete", paving_bid_path(paving_bid), :class => 'mainBidLinks' %>
+			</td>
+
+			<td>
+			<p class="mainBidLinks"><%= paving_bid.jobID.to_s + " - " + paving_bid.jobName.to_s %></p><br/>
+			<p class="mainBidLinks"><%= paving_bid.jobAddress.to_s %></p>
+			</td>
+
+			<td>
+			<p class="mainBidLinks"><%= paving_bid.bidDate.to_formatted_s(:long) %></p>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+
+
 
 

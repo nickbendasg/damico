@@ -90,6 +90,10 @@ totalCost = reclaimCost + grAcom + materialsTotal + setMaterial + truckTotal
 <p><%= "$" + number_with_precision(truckTotal, :precision => 2, :delimiter => ',') + " | Renting " + @paving_bid.numRentalTrucks.to_s + " Trucks at $" + @paving_bid.rentalTruckCost.to_s + " per Day for " + @paving_bid.truckDays.to_s + " days." %>
 </p>
 
+
+<h3><%= "Taxes"
+
+
 <br/>
 
 <h2><%= "Total: $" + number_with_precision(totalCost, :precision => 2, :delimiter => ',') %></h2>

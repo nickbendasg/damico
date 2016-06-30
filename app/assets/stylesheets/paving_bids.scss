@@ -23,12 +23,34 @@
 
 }
 
+table, th, td {
+   border: 1px solid black;
+}
+
+br {
+
+   display: block;
+   text-size: .2em;
+}
+
+.new_paving_bid {
+	font-size: 3.7em;
+}
+
 
 .mainBidLinks {
 
-font-size: 3.5em;
+font-size: 1em;
 
 }
+
+.firstTable {
+	
+	width: 100%;
+	
+}
+
+.firstTable, th, t
 
 
 .new_paving_bid {
@@ -40,5 +62,12 @@ font-size: 3em;
 .editT, .editI {
 
 font-size: 2.2em;
+
+}
+
+a, p {
+
+	
+font-size: .5em;
 
 }
